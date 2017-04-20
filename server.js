@@ -2,7 +2,7 @@ var express = require('express'); // calling json package
 var path = require('path');
 var app = express();
 
-//middle ware
+// middle ware that makes the files in the public folder visible and must come above my res
 // before running any route run this which allow this file to be served back
 app.use(express.static('public'));
 
@@ -16,9 +16,9 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/index.html'));//response to send file
 });
 
-// in terminal type in --- node server.js --- and in browser type in http://localhost:3001
-app.listen(3001, function() { // app.listen is a function
-  console.log('listening on port 3001'); // log onto the terminal to test function
+// in terminal type in --- node server.js --- and in browser type in http://localhost:5000
+app.listen(5000, function() { // app.listen is a function and tells server to listen on 5000
+  console.log('listening on port 5000'); // log onto the terminal to test function
 });
 
 // log to test on terminal
